@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acronyms Creator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🔤 Acronyms Creator 🔤</h1>
+        <form action="/generate" method="post">
+            <label for="phrase">Enter a phrase:</label>
+            <input type="text" name="phrase" id="phrase" placeholder="Enter your phrase here" required>
+            <button type="submit">Create Acronym</button>
+        </form>
+        
+        {% if acronym %}
+            <div class="result">
+                <h2>Phrase:</h2>
+                <p>{{ phrase }}</p>
+                <h2>Acronym:</h2>
+                <p>{{ acronym }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
